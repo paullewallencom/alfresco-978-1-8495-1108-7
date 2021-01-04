@@ -1,0 +1,14 @@
+<constraints>
+	<constraint name="iabook:productColors" type="LIST">
+		<parameter name="allowedValues">
+			<list>
+				<value>Red</value>
+				<value>Green</value>
+				<value>Blue</value>
+			</list>
+		</parameter>
+		<parameter name="caseSensitive">
+			<value>false</value>
+		</parameter>
+	</constraint>
+</constraints>

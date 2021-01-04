@@ -1,0 +1,17 @@
+var back = space.childByNamePath("Backup");
+if (back == null && space.hasPermission("CreateChildren"))
+{
+	back = space.createFolder("Backup");
+}
+
+if (back != null && back.hasPermission("CreateChildren"))
+{
+	var copied = document.copy(back);
+	if (copied != null)
+	{
+		var backName = "Backup of " + copied.name;
+		copied.name = backName;
+		copied.properties.description = "This is a Backup copy created by JS";
+		copied.save();
+	}
+}

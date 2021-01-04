@@ -1,0 +1,4 @@
+if (document.mimetype == "application/msword")
+{
+	var pdfDoc = document.transformDocument("application/pdf");
+}

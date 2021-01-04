@@ -1,0 +1,15 @@
+<#if docs?exists>
+[
+	<#list docs as c>
+	{
+		"Name":"${c.name}",
+		"Create Date":"${c.properties["cm:created"]?datetime}",
+		"Creator":"${c.properties["cm:creator"]}",
+		"Size":"${c.size}"
+	}
+	<#if c_has_next>,</#if>
+	</#list>
+]
+<#else>
+	"OutputMessage":"${outputmessage}"
+</#if>

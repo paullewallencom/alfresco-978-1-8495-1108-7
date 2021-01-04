@@ -1,0 +1,17 @@
+<config evaluator="node-type" condition="iabook:Product">
+	<property-sheet>
+		<show-property name="name" />
+		<show-property name="mimetype" display-label-id="content_type" component-generator="MimeTypeSelectorGenerator" />
+		<show-property name="encoding" display-label-id="encoding" ignore-if-missing="false" component-generator="CharsetSelectorGenerator" />
+		<show-property name="size" display-label-id="size" converter="org.alfresco.faces.ByteSizeConverter" show-in-edit-mode="false" />
+		<show-property name="title" display-label-id="title" ignore-if-missing="false" />
+		<show-property name="description" display-label-id="description" ignore-if-missing="false" component-generator="MultilingualTextAreaGenerator" />
+		<show-property name="iabook:sku" />
+		<show-property name="iabook:manufacturer" />
+		<show-property name="iabook:color" />
+		<show-property name="iabook:brand" />
+		<show-property name="iabook:unitPrice" />
+		<show-property name="iabook:displayUntil" />
+		<show-property name="iabook:competitorDetails" component-generator="TextAreaGenerator" />
+	</property-sheet>
+</config>

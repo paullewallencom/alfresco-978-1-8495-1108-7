@@ -1,0 +1,6 @@
+td,tr,p,div
+{
+   color: #0000FF;
+   font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+   font-size: 11px;
+}

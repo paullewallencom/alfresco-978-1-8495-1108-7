@@ -1,0 +1,50 @@
+<config evaluator="node-type" condition="iabookwf:startTask" replace="true">
+<property-sheet>
+ <separator name="sep1" display-label-id="general" component-generator="HeaderSeparatorGenerator" />
+ <show-property name="bpm:workflowDescription" component-generator="TextAreaGenerator" />
+ <show-property name="bpm:workflowPriority" />
+ <show-property name="bpm:workflowDueDate" />
+</property-sheet>
+</config>
+
+<config evaluator="node-type" condition="iabookwf:createRequirementTask" replace="true">
+   <property-sheet>
+	  <separator name="sep1" display-label-id="general" component-generator="HeaderSeparatorGenerator" />
+	  <show-property name="iabookwf:clientName" />
+	  <show-property name="iabookwf:projectName" />
+	  <show-property name="iabookwf:budget" />
+ <separator name="sep2" display-label-id="iabookwf_pm_header" component-generator="HeaderSeparatorGenerator" />
+ <show-association name="bpm:assignee" display-label-id="iabookwf_pm" />
+   </property-sheet>
+</config>
+
+<config evaluator="node-type" condition="iabookwf:createProjectSizingTask" replace="true">
+   <property-sheet>
+	  <separator name="sep1" display-label-id="general" component-generator="HeaderSeparatorGenerator" />
+	  <show-property name="iabookwf:mandays" />
+	  <show-property name="iabookwf:totalCost" />
+ <separator name="sep2" display-label-id="iabookwf_pm_header" component-generator="HeaderSeparatorGenerator" />
+ <show-association name="bpm:assignee" display-label-id="iabookwf_pm" />
+   </property-sheet>
+</config>
+
+<config evaluator="node-type" condition="iabookwf:createProjectPlanTask" replace="true">
+   <property-sheet>
+	  <separator name="sep1" display-label-id="general" component-generator="HeaderSeparatorGenerator" />
+	  <show-property name="iabookwf:startDate" />
+	  <show-property name="iabookwf:endDate" />
+	  <show-property name="iabookwf:releaseDate" />
+ <separator name="sep2" display-label-id="iabookwf_pm_header" component-generator="HeaderSeparatorGenerator" />
+ <show-association name="bpm:assignee" display-label-id="iabookwf_pm" />
+   </property-sheet>
+</config>
+
+<config evaluator="node-type" condition="iabookwf:kickOffDevelopmentTask" replace="true">
+   <property-sheet>
+	  <separator name="sep1" display-label-id="general" component-generator="HeaderSeparatorGenerator" />
+	  <show-property name="iabookwf:projectTeam" />
+	  <show-property name="iabookwf:projectEnvDone" />
+ <separator name="sep2" display-label-id="iabookwf_pm_header" component-generator="HeaderSeparatorGenerator" />
+ <show-association name="bpm:assignee" display-label-id="iabookwf_pm" />
+   </property-sheet>
+</config>

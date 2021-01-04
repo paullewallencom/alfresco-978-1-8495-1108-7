@@ -1,0 +1,23 @@
+<managed-bean>
+   <managed-bean-name>TextFieldGenerator</managed-bean-name>
+   <managed-bean-class>org.alfresco.web.bean.generator.TextFieldGenerator</managed-bean-class>
+   <managed-bean-scope>request</managed-bean-scope>
+   <managed-property>
+      <property-name>size</property-name>
+      <value>150</value>
+   </managed-property>
+</managed-bean>
+
+<managed-bean>
+   <managed-bean-name>TextAreaGenerator</managed-bean-name>
+   <managed-bean-class>org.alfresco.web.bean.generator.TextAreaGenerator</managed-bean-class>
+   <managed-bean-scope>request</managed-bean-scope>
+   <managed-property>
+      <property-name>rows</property-name>
+      <value>25</value>
+   </managed-property>
+   <managed-property>
+      <property-name>columns</property-name>
+      <value>100</value>
+   </managed-property>
+</managed-bean>

@@ -1,0 +1,4 @@
+  INFO  [management.subsystems.ChildApplicationContextFactory] Starting 'imap' subsystem, ID: [imap, default]
+  INFO  [alfresco.config.JndiPropertyPlaceholderConfigurer] Loading properties file from class path resource [alfresco/alfresco-shared.properties]
+  INFO  [repo.imap.AlfrescoImapServer] IMAP service started on host:port snigbhaumik:143.
+  INFO  [management.subsystems.ChildApplicationContextFactory] Startup of 'imap' subsystem, ID: [imap, default] complete

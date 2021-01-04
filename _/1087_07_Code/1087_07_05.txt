@@ -1,0 +1,47 @@
+<type name="iabook:Product">
+	<title>Retailer Product</title>
+	<parent>cm:content</parent>
+	<properties>
+		<property name="iabook:sku">
+			<title>Product SKU</title>
+			<type>d:text</type>
+			<mandatory>true</mandatory>
+		</property>
+		<property name="iabook:manufacturer">
+			<title>Manufacturer</title>
+			<type>d:text</type>
+			<mandatory>true</mandatory>
+		</property>
+		<property name="iabook:color">
+			<title>Product Color</title>
+			<type>d:text</type>
+			<mandatory>false</mandatory>
+		</property>
+		<property name="iabook:brand">
+			<title>Manufacturer Brand</title>
+			<type>d:text</type>
+			<mandatory>false</mandatory>
+		</property>
+		<property name="iabook:unitPrice">
+			<title>Product Unit Price</title>
+			<type>d:double</type>
+			<mandatory>true</mandatory>
+		</property>
+		<property name="iabook:displayUntil">
+			<title>Date until Product should be displayed</title>
+			<type>d:datetime</type>
+			<mandatory>true</mandatory>
+		</property>
+		<property name="iabook:competitorProducts">
+			<title>Competitor Products List</title>
+			<type>d:text</type>
+			<mandatory>false</mandatory>
+			<multiple>true</multiple>
+		</property>
+		<property name="iabook:competitorDetails">
+			<title>Details of Competitor Products</title>
+			<type>d:text</type>
+			<mandatory>false</mandatory>
+		</property>
+	</properties>
+</type>

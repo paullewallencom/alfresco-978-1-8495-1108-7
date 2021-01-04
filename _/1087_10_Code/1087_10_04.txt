@@ -1,0 +1,23 @@
+<html>
+<body>
+	<#if folders?exists>
+		<h2>Sub Folders</h2>
+		<table cellpadding="5" cellspacing="5" border="1">
+			<tr style="font-weight: bold"><td>Name</td><td>Create Date</td><td>Creator</td><td>Offspring</td></tr>
+			<#list folders as c>
+				<tr><td>${c.name}</td><td>${c.properties["cm:created"]?datetime}</td><td>${c.properties["cm:creator"]}</td><td>${c.children?size}</td></tr>
+			</#list>
+		</table>
+	</#if>
+
+	<#if docs?exists>
+		<h2>Content Items</h2>
+		<table cellpadding="5" cellspacing="5" border="1">
+			<tr style="font-weight: bold"><td>Name</td><td>Create Date</td><td>Creator</td><td>Size (bytes)</td></tr>
+			<#list docs as c>
+				<tr><td>${c.name}</td><td>${c.properties["cm:created"]?datetime}</td><td>${c.properties["cm:creator"]}</td><td>${c.size}</td></tr>
+			</#list>
+		</table>
+	</#if>
+</body>
+</html>

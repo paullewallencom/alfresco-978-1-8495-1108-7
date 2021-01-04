@@ -1,0 +1,12 @@
+# Inbound Mail Configurations.
+email.inbound.unknownUser=anonymous
+email.inbound.enabled=true
+
+email.server.enabled=true
+email.server.port=25
+email.server.domain=alfresco.local
+email.server.allowed.senders=.*
+#email.server.blocked.senders=
+# Inbound Mail Configurations End.
+
+

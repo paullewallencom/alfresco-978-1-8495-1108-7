@@ -1,0 +1,12 @@
+<#if space??>
+	<h2>
+		Welcome to ${space.name}
+	</h2>
+	<h3>
+		${space.properties["cm:description"]}
+	</h3>
+<#else>
+	<h3>
+		No current space!!!
+	</h3>
+</#if>

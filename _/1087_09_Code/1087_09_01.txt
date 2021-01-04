@@ -1,0 +1,22 @@
+<html>
+	<body>
+		<h1>Good Morning ${user_name}</h1>
+		<#-- The library is closed on weekends -->
+		<#if current_day == "Saturday" || current_day == "Sunday">
+			<h3>Sorry ${user_name}, you cannot borrow a book today.</h3>
+		<#else>
+			<#-- Check whether books are available -->
+			<#if books_available?exists>
+				<h3>Here are the books available for you!</h3>
+				<!-- List of books available -->
+				<table>
+					<#list books_available as book>
+						<tr><td><a href="${book.book_url}">${book.book_name}</a></td></tr>
+					</#list>
+				</table>
+			<#else>
+				<h3>Sorry ${user_name}, no books available for now, please try after some time.</h3>
+			</#if>
+		</#if>
+	</body>
+</html>

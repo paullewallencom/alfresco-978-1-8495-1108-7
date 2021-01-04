@@ -1,0 +1,8 @@
+a:link, a:visited
+{
+   font-size: 11px;
+   color: #004488;
+   text-decoration: none;
+   font-family: Tahoma, Arial, Helvetica, sans-serif;
+   font-weight: normal;
+}

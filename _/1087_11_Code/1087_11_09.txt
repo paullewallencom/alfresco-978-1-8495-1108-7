@@ -1,0 +1,5 @@
+<property name="labels">
+	<list>
+		<value>alfresco/extension/pm-workflow-messages</value>
+	</list>
+</property>

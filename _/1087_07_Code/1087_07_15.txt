@@ -1,0 +1,5 @@
+<config evaluator="aspect-name" condition="iabook:relatedProducts">
+	<property-sheet>
+		<show-association name="iabook:relatedProductList" />
+	</property-sheet>
+</config>

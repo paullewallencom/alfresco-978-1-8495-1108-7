@@ -1,0 +1,87 @@
+<alfresco-config>
+
+	<config evaluator="string-compare" condition="Views">
+		<views>
+			<view-defaults>
+				<browse>
+					<!-- allowable values: list|details|icons -->
+					<view>details</view>
+					<page-size>
+						<list>20</list>
+						<details>20</details>
+						<icons>20</icons>
+					</page-size>
+				</browse>
+			</view-defaults>
+		</views>
+	</config>
+
+	<config evaluator="string-compare" condition="Languages">
+		<languages>
+			<language locale="de_DE">German</language>
+			<language locale="es_ES">Spanish</language>
+			<language locale="fr_FR">French</language>
+			<language locale="it_IT">Italian</language>
+		</languages>
+	</config>
+
+	<config>
+		<client>
+			<shelf-visible>false</shelf-visible>
+		</client>
+	</config>
+
+	<config evaluator="string-compare" condition="Sidebar">
+		<sidebar>
+			<default-plugin>shelf</default-plugin>
+		</sidebar>
+	</config>
+
+	<config evaluator="string-compare" condition="cm:folder icons">
+		<icons>
+			<icon name="space-icon-custom" path="/images/icons/ia-logo.gif" />
+		</icons>
+	</config>
+
+
+
+	<!-- Custom Content Type Settings -->
+	<config evaluator="string-compare" condition="Content Wizards">
+		<content-types>
+			<type name="iabook:Product"/>
+		</content-types>
+	</config>
+
+	<config evaluator="node-type" condition="iabook:Product">
+		<property-sheet>
+			<show-property name="name" />
+			<show-property name="mimetype" display-label-id="content_type" component-generator="MimeTypeSelectorGenerator" />
+			<show-property name="encoding" display-label-id="encoding" ignore-if-missing="false" component-generator="CharsetSelectorGenerator" />
+			<show-property name="size" display-label-id="size" converter="org.alfresco.faces.ByteSizeConverter" show-in-edit-mode="false" />
+			<show-property name="title" display-label-id="title" ignore-if-missing="false" />
+			<show-property name="description" display-label-id="description" ignore-if-missing="false" component-generator="MultilingualTextAreaGenerator" />
+			<show-property name="iabook:sku" />
+			<show-property name="iabook:manufacturer" />
+			<show-property name="iabook:color" />
+			<show-property name="iabook:brand" />
+			<show-property name="iabook:unitPrice" />
+			<show-property name="iabook:displayUntil" />
+			<show-property name="iabook:competitorProducts" />
+			<show-property name="iabook:competitorDetails" component-generator="TextAreaGenerator" />
+		</property-sheet>
+	</config>
+
+	<config evaluator="aspect-name" condition="iabook:relatedProducts">
+		<property-sheet>
+			<show-association name="iabook:relatedProductList" />
+		</property-sheet>
+	</config>
+
+
+	<config evaluator="string-compare" condition="Action Wizards">
+		<aspects>
+			<aspect name="iabook:relatedProducts" />
+		</aspects>
+	</config>
+
+</alfresco-config>

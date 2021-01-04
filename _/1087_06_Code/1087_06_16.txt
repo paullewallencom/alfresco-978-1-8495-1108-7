@@ -1,0 +1,6 @@
+a:hover
+{
+   color: #00FF00;
+   text-decoration: underline;
+   font-weight: normal;
+}

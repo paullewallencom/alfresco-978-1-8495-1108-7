@@ -1,0 +1,7 @@
+<alfresco-config area="file-servers">
+
+   <config evaluator="string-compare" condition="CIFS Server">
+      <serverEnable enabled="${cifs.enabled}"/>
+      
+      <host name="${cifs.localname}A" domain="${cifs.domain}"/>
+      <comment>Alfresco CIFS Server</comment>

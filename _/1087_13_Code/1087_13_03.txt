@@ -1,0 +1,15 @@
+var userinfo = people.getPerson("snig.bhaumik");
+
+var params = new Array();
+params["username"] = userinfo.properties["firstName"];
+params["docname"] = document.name;
+params["spacename"] = space.name;
+
+var mail = actions.create("mail");
+mail.parameters.subject = "Document Upload Alert!";
+mail.parameters.from = person.properties.email;
+var template = companyhome.childByNamePath("Data Dictionary/Email Templates/send-email.ftl");
+mail.parameters.text = document.processTemplate(template, params);
+mail.parameters.to = userinfo.properties.email;
+
+mail.execute(document);

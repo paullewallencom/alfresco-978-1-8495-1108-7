@@ -1,0 +1,5 @@
+<config evaluator="string-compare" condition="Sidebar">
+	<sidebar>
+		<default-plugin>shelf</default-plugin>
+	</sidebar>
+</config>

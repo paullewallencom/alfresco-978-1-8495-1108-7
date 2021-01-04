@@ -1,0 +1,8 @@
+<config evaluator="string-compare" condition="Languages">
+	<languages>
+		<language locale="de_DE">German</language>
+		<language locale="es_ES">Spanish</language>
+		<language locale="fr_FR">French</language>
+		<language locale="it_IT">Italian</language>
+	</languages>
+</config>

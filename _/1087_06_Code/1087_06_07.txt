@@ -1,0 +1,5 @@
+<config>
+	<client>
+		<shelf-visible>false</shelf-visible>
+	</client>
+</config>

@@ -1,0 +1,14 @@
+if (document.hasPermission("Write"))
+{
+	if (document.mimetype == "text/plain")
+	{
+		if (!document.hasAspect("cm:versionable"))
+			document.addAspect("cm:versionable");
+
+		var wcopy = document.checkout();
+		var cnt = wcopy.content;
+		cnt += "\r\nThis line is added using the JavaScript.";
+		wcopy.content = cnt;
+		wcopy.checkin("Sample Line added via JS");
+	}
+}

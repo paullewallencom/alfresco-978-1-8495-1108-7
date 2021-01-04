@@ -1,0 +1,8 @@
+<webscript>
+	<shortname>Send Mail</shortname>
+	<description>Searches for a user and sends mail to him about his details.</description>
+	<url>/com/infoaxon/sendusermail</url>
+	<format default="html"/>
+	<authentication>admin</authentication>
+	<transaction>required</transaction>
+</webscript>

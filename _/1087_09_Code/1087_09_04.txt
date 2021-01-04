@@ -1,0 +1,21 @@
+<#if space??>
+	<h2>
+		Documents in ${space.name}
+	</h2>
+	<table>
+		<#assign cnt=0>
+		<#list space.children as c>
+			<#if c.isDocument>
+				<#assign cnt=cnt+1>
+				<tr><td>${cnt}.&nbsp;<a href="${url.context}${c.downloadUrl}">${c.properties.name}</a></td></tr>
+				<#if c.mimetype = "image/jpeg" || c.mimetype = "image/png" || c.mimetype = "image/gif">
+					<tr><td style='padding-left:20px'><img width=100 height=65 src="${url.context}${c.url}"><td></tr>
+				</#if>
+			</#if>
+		</#list>
+	</table>
+<#else>
+	<h3>
+		No current space!!!
+	</h3>
+</#if>

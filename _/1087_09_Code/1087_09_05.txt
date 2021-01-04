@@ -1,0 +1,17 @@
+<#if document?exists>
+	<h3>Version History of <u>${document.name}</u></h3>
+	<table cellspacing=10>
+		<tr align=left><th>Version</th><th>Name</th><th>Description</th><th>Created Date</th><th>Creator</th></tr>
+		<#list document.versionHistory as v>
+			<tr>
+				<td><a href="/alfresco${v.url}" target="new">${v.versionLabel}</a></td>
+				<td><a href="/alfresco${v.url}" target="new">${v.name}</a></td>
+				<td><#if v.description?exists>${v.description}</#if></td>
+				<td>${v.createdDate?datetime}</td>
+				<td>${v.creator}</td>
+			</tr>
+		</#list>
+	</table>
+<#else>
+	No document found!
+</#if>

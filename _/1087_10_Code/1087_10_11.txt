@@ -1,0 +1,31 @@
+
+function main()
+{
+	if (args.uname == null)
+	{
+		model.result = "No user";
+		return;
+	}
+	var usr = people.getPerson(args.uname);
+	if (usr == null)
+	{
+		model.result = "No user";
+		return;
+	}
+
+	var mail = actions.create("mail");
+	mail.parameters.to = usr.properties["cm:email"];
+	mail.parameters.subject = "Welcome!";
+	mail.parameters.from = "administrator@mydomain.com";
+	mail.parameters.template = companyhome.childByNamePath("Data Dictionary/Email Templates/userdetailsmail.ftl");
+	mail.parameters.text = "Welcome to Alfresco!";
+	mail.execute(usr);
+
+
+	var mailtemplate = companyhome.childByNamePath("Data Dictionary/Email Templates/userdetailsmail.ftl");
+	var result = usr.processTemplate(mailtemplate);
+
+	model.result = result;
+}
+
+main();

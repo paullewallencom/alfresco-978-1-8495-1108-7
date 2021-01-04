@@ -1,0 +1,11 @@
+if (document.hasPermission("ChangePermissions"))
+{
+	var usr = people.getPerson("snig.bhaumik");
+	if (usr != null)
+	{
+		document.setPermission("Write", "snig.bhaumik");
+		document.setPermission("Delete", "snig.bhaumik");
+		document.setPermission("AddChildren", "snig.bhaumik");
+		document.setPermission("Execute", "snig.bhaumik");
+	}
+}

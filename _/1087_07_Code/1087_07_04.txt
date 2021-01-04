@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<model name="iabook:catalogue" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+	<description>Retailer Product Catalogue</description>
+	<author>Snig Bhaumik</author>
+	<version>1.0</version>
+
+	<imports>
+		<import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+		<import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+	</imports>
+
+	<namespaces>
+		<namespace uri="http://www.infoaxon.com/book/models/catalogue/1.0" prefix="iabook"/>
+	</namespaces>
+
+	<types>
+	</types>
+
+</model>

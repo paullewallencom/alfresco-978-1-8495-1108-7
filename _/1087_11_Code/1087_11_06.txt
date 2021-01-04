@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process-definition xmlns="urn:jbpm.org:jpdl-3.1" name="iabookwf:pmprocess">
+
+    <swimlane name="initiator" />
+
+    <swimlane name="pmuser">
+        <assignment class="org.alfresco.repo.workflow.jbpm.AlfrescoAssignment">
+            <actor>#{bpm_assignee}</actor>
+        </assignment>    
+    </swimlane>
+
+
+    <start-state name="start">
+        <task name="iabookwf:startTask" swimlane="initiator" />
+        <transition name="" to="submitRequirement" />
+    </start-state>
+
+    <task-node name="submitRequirement">
+        <task name="iabookwf:createRequirementTask" swimlane="initiator">
+            <event type="task-create">
+                <script>
+                    if (bpm_workflowDueDate != void) taskInstance.dueDate = bpm_workflowDueDate;
+                    if (bpm_workflowPriority != void) taskInstance.priority = bpm_workflowPriority;
+                </script>
+            </event>
+        </task>
+        <transition name="Submit Requirements" to="reviewRequirement" />
+
+    </task-node>
+
+    <task-node name="reviewRequirement">
+        <task name="iabookwf:reviewRequirementTask" swimlane="pmuser">
+            <event type="task-create">
+                <script>
+                    if (bpm_workflowDueDate != void) taskInstance.dueDate = bpm_workflowDueDate;
+                    if (bpm_workflowPriority != void) taskInstance.priority = bpm_workflowPriority;
+                </script>
+            </event>
+        </task>
+        <transition name="Approve Requirements" to="createProjectSizing" />
+        <transition name="Reject Requirements" to="submitRequirement" />
+
+    </task-node>
+
+    <task-node name="createProjectSizing">
+        <task name="iabookwf:createProjectSizingTask" swimlane="pmuser">
+            <event type="task-create">
+                <script>
+                    if (bpm_workflowDueDate != void) taskInstance.dueDate = bpm_workflowDueDate;
+                    if (bpm_workflowPriority != void) taskInstance.priority = bpm_workflowPriority;
+                </script>
+            </event>
+        </task>
+        <transition name="Submit Project Sizing" to="createProjectPlan" />
+    </task-node>
+
+    <task-node name="createProjectPlan">
+        <task name="iabookwf:createProjectPlanTask" swimlane="pmuser">
+            <event type="task-create">
+                <script>
+                    if (bpm_workflowDueDate != void) taskInstance.dueDate = bpm_workflowDueDate;
+                    if (bpm_workflowPriority != void) taskInstance.priority = bpm_workflowPriority;
+                </script>
+            </event>
+        </task>
+        <transition name="Submit Project Plan" to="kickOffDevelopment" />
+    </task-node>
+
+    <task-node name="kickOffDevelopment">
+        <task name="iabookwf:kickOffDevelopmentTask" swimlane="pmuser">
+            <event type="task-create">
+                <script>
+                    if (bpm_workflowDueDate != void) taskInstance.dueDate = bpm_workflowDueDate;
+                    if (bpm_workflowPriority != void) taskInstance.priority = bpm_workflowPriority;
+                </script>
+            </event>
+        </task>
+        <transition name="Kick Off Development" to="end" />
+    </task-node>
+
+    <end-state name="end" />
+
+</process-definition>

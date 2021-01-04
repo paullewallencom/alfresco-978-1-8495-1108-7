@@ -1,0 +1,11 @@
+<config evaluator="string-compare" condition="Advanced Search">
+	<advanced-search>
+		<content-types>
+			<type name="iabook:Product" />
+		</content-types>
+
+		<custom-properties>
+			<meta-data type="iabook:Product" property="iabook:sku" />
+		</custom-properties>
+	</advanced-search>
+</config>

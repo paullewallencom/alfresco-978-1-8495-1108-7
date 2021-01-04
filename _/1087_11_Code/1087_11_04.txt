@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	
+<model name="iabookwf:BookWFModel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+	<imports>
+		<import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+		<import uri="http://www.alfresco.org/model/bpm/1.0" prefix="bpm"/>
+		<import uri="http://www.alfresco.org/model/content/1.0" prefix="cm" />
+	</imports>
+	
+	<namespaces>
+		<namespace uri="http://www.infoaxon.com/book/models/workflow/1.0" prefix="iabookwf"/>
+	</namespaces>
+	
+	<types>
+		<type name="iabookwf:startTask">
+			<title>Project Start</title>
+			<parent>bpm:startTask</parent>
+		</type>
+
+	  <type name="iabookwf:createRequirementTask">
+         <parent>bpm:workflowTask</parent>
+		 <properties>
+			<property name="iabookwf:clientName">
+				<title>Client Name</title>
+				<type>d:text</type>
+				<mandatory>true</mandatory>
+			</property>
+			<property name="iabookwf:projectName">
+				<title>Project Name</title>
+				<type>d:text</type>
+				<mandatory>true</mandatory>
+			</property>
+			<property name="iabookwf:budget">
+				<title>Project Estimated Budget</title>
+				<type>d:double</type>
+				<mandatory>true</mandatory>
+			</property>
+		 </properties>
+
+		 <overrides>
+            <property name="bpm:packageActionGroup">
+               <default>add_package_item_actions</default>
+            </property>
+            <property name="bpm:packageItemActionGroup">
+               <default>edit_package_item_actions</default>
+            </property>
+		</overrides>
+		 
+         <mandatory-aspects>
+            <aspect>bpm:assignee</aspect>
+         </mandatory-aspects>
+      </type>
+
+      <type name="iabookwf:reviewRequirementTask">
+         <parent>bpm:workflowTask</parent>
+
+		 <overrides>
+            <property name="bpm:packageItemActionGroup">
+               <default>edit_package_item_actions</default>
+            </property>
+		</overrides>
+
+		 <mandatory-aspects>
+            <aspect>bpm:assignee</aspect>
+         </mandatory-aspects>
+      </type>
+		
+      <type name="iabookwf:createProjectSizingTask">
+         <parent>bpm:workflowTask</parent>
+		 <properties>
+			<property name="iabookwf:mandays">
+				<title>Estimated Man Days</title>
+				<type>d:int</type>
+				<mandatory>true</mandatory>
+			</property>
+			<property name="iabookwf:totalCost">
+				<title>Total Estimated Cost</title>
+				<type>d:double</type>
+				<mandatory>true</mandatory>
+			</property>
+		 </properties>
+		 
+		 <overrides>
+            <property name="bpm:packageItemActionGroup">
+               <default>edit_package_item_actions</default>
+            </property>
+		</overrides>
+
+         <mandatory-aspects>
+            <aspect>bpm:assignee</aspect>
+         </mandatory-aspects>
+	  </type>
+
+      <type name="iabookwf:createProjectPlanTask">
+         <parent>bpm:workflowTask</parent>
+		 <properties>
+			<property name="iabookwf:startDate">
+				<title>Proposed Start Date</title>
+				<type>d:date</type>
+				<mandatory>true</mandatory>
+			</property>
+			<property name="iabookwf:endDate">
+				<title>Proposed End Date</title>
+				<type>d:date</type>
+				<mandatory>true</mandatory>
+			</property>
+			<property name="iabookwf:releaseDate">
+				<title>Proposed Final Release Date</title>
+				<type>d:date</type>
+				<mandatory>true</mandatory>
+			</property>
+		 </properties>
+		 
+		 <overrides>
+            <property name="bpm:packageItemActionGroup">
+               <default>edit_package_item_actions</default>
+            </property>
+		</overrides>
+
+         <mandatory-aspects>
+            <aspect>bpm:assignee</aspect>
+         </mandatory-aspects>
+	  </type>
+		
+      <type name="iabookwf:kickOffDevelopmentTask">
+         <parent>bpm:workflowTask</parent>
+		 <properties>
+			<property name="iabookwf:projectTeam">
+				<title>Finalized Project Team</title>
+				<type>d:text</type>
+				<mandatory>false</mandatory>
+				<multiple>true</multiple>
+			</property>
+			<property name="iabookwf:projectEnvDone">
+				<title>Project Environment setup Done?</title>
+				<type>d:boolean</type>
+				<mandatory>true</mandatory>
+			</property>
+		 </properties>
+		 
+		 <overrides>
+            <property name="bpm:packageItemActionGroup">
+               <default>edit_package_item_actions</default>
+            </property>
+		</overrides>
+
+         <mandatory-aspects>
+            <aspect>bpm:assignee</aspect>
+         </mandatory-aspects>
+	  </type>
+		
+	</types>
+</model>

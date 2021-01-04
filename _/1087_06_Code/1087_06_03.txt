@@ -1,0 +1,5 @@
+<page-size>
+	<list>20</list>
+	<details>20</details>
+	<icons>20</icons>
+</page-size>

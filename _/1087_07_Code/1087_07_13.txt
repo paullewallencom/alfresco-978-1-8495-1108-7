@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<model name="iabook:catalogue" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+	<description>Retailer Product Catalogue</description>
+	<author>Snig Bhaumik</author>
+	<version>1.0</version>
+
+	<imports>
+		<import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+		<import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+	</imports>
+
+	<namespaces>
+		<namespace uri="http://www.infoaxon.com/book/models/catalogue/1.0" prefix="iabook"/>
+	</namespaces>
+
+	<constraints>
+		<constraint name="iabook:productColors" type="LIST">
+			<parameter name="allowedValues">
+				<list>
+					<value>Red</value>
+					<value>Green</value>
+					<value>Blue</value>
+				</list>
+			</parameter>
+			<parameter name="caseSensitive">
+				<value>false</value>
+			</parameter>
+		</constraint>
+	</constraints>
+
+	<types>
+		<type name="iabook:Product">
+			<title>Retailer Product</title>
+			<parent>cm:content</parent>
+			<properties>
+				<property name="iabook:sku">
+					<title>Product SKU</title>
+					<type>d:text</type>
+					<mandatory>true</mandatory>
+				</property>
+				<property name="iabook:manufacturer">
+					<title>Manufacturer</title>
+					<type>d:text</type>
+					<mandatory>true</mandatory>
+				</property>
+				<property name="iabook:color">
+					<title>Product Color</title>
+					<type>d:text</type>
+					<mandatory>false</mandatory>
+					<constraints>
+						<constraint ref="iabook:productColors" />
+					</constraints>
+				</property>
+				<property name="iabook:brand">
+					<title>Manufacturer Brand</title>
+					<type>d:text</type>
+					<mandatory>false</mandatory>
+				</property>
+				<property name="iabook:unitPrice">
+					<title>Product Unit Price</title>
+					<type>d:double</type>
+					<mandatory>true</mandatory>
+				</property>
+				<property name="iabook:displayUntil">
+					<title>Date until Product should be displayed</title>
+					<type>d:datetime</type>
+					<mandatory>true</mandatory>
+				</property>
+				<property name="iabook:competitorProducts">
+					<title>Competitor Products List</title>
+					<type>d:text</type>
+					<mandatory>false</mandatory>
+					<multiple>true</multiple>
+				</property>
+				<property name="iabook:competitorDetails">
+					<title>Details of Competitor Products</title>
+					<type>d:text</type>
+					<mandatory>false</mandatory>
+				</property>
+			</properties>
+		</type>
+	</types>
+
+	<aspects>
+		<aspect name="iabook:relatedProducts">
+			<title>Related Products</title>
+			<associations>
+				<association name="iabook:relatedProductList">
+					<title>List of Related Products</title>
+					<source>
+						<mandatory>false</mandatory>
+						<many>true</many>
+					</source>
+					<target>
+						<class>iabook:Product</class>
+						<mandatory>false</mandatory>
+						<many>true</many>
+					</target>
+				</association>
+			</associations>
+		</aspect>
+	</aspects>
+
+</model>

@@ -1,0 +1,13 @@
+
+
+function main()
+{
+	var dname = args.dname;
+	var qry = "@cm\\:name:*" + dname + "*";
+	var docs = search.luceneSearch(qry);
+
+	model.docs = docs;
+	model.dname = dname;
+}
+
+main();

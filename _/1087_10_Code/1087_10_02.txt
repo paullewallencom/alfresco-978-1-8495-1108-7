@@ -1,0 +1,27 @@
+<html>
+<body>
+	<#if userhome?exists>
+		<h2>Sub Folders</h2>
+		<table cellpadding="5" cellspacing="5" border="1">
+			<tr style="font-weight: bold"><td>Name</td><td>Create Date</td><td>Creator</td><td>Offspring</td></tr>
+			<#list userhome.children as c>
+				<#if c.isContainer>
+					<tr><td>${c.name}</td><td>${c.properties["cm:created"]?datetime}</td><td>${c.properties["cm:creator"]}</td><td>${c.children?size}</td></tr>
+				</#if>
+			</#list>
+		</table>
+
+		<h2>Content Items</h2>
+		<table cellpadding="5" cellspacing="5" border="1">
+			<tr style="font-weight: bold"><td>Name</td><td>Create Date</td><td>Creator</td><td>Size (bytes)</td></tr>
+			<#list userhome.children as c>
+				<#if c.isDocument>
+					<tr><td>${c.name}</td><td>${c.properties["cm:created"]?datetime}</td><td>${c.properties["cm:creator"]}</td><td>${c.size}</td></tr>
+				</#if>
+			</#list>
+		</table>
+	<#else>
+		<h3>User Home not Found!</h3>
+	</#if>
+</body>
+</html>

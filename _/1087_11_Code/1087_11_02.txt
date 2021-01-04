@@ -1,0 +1,6 @@
+<transition name="approve" to="approved">
+	<action class="org.alfresco.repo.workflow.jbpm.AlfrescoJavaScript">
+		<script>
+		</script>
+	</action>
+</transition> 

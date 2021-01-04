@@ -1,0 +1,4 @@
+if (!document.hasAspect("cm:taggable"))
+	document.addAspect("cm:taggable");
+
+document.addTag("test");

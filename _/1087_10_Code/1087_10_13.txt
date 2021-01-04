@@ -1,0 +1,13 @@
+Hello Administrator, 
+
+Welcome to Alfresco! 
+Here are your registration details. 
+
+First Name: Administrator 
+Last Name: 
+User Name: admin 
+
+Enjoy your Stay! 
+
+Regards,
+the Alfresco Team.

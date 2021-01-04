@@ -1,0 +1,5 @@
+<property name="models">
+	<list>
+		<value>alfresco/extension/pm_taskModel.xml</value>
+	</list>
+</property>

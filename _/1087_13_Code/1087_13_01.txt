@@ -1,0 +1,10 @@
+# Outbound Mail Configurations.
+mail.host=smtp.mydomain.com
+mail.port=25
+mail.username=myname@mydomain.com
+mail.password=mypass
+mail.encoding=UTF-8
+mail.from.default=myname@mydomain.com
+mail.smtp.auth=true
+mail.protocol=smtp
+# Outbound Mail Configurations End.

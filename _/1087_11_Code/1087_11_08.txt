@@ -1,0 +1,25 @@
+
+# Workflow Definition
+iabookwf_pmprocess.workflow.title=Project Management
+iabookwf_pmprocess.workflow.description=Project Management sample Flow for Cookbook
+
+
+# Workflow Tasks
+iabookwf_BookWFModel.type.iabookwf_startTask.title=Start new Project
+iabookwf_BookWFModel.type.iabookwf_startTask.description=Start new Project
+
+iabookwf_BookWFModel.type.iabookwf_createRequirementTask.title=Create & Submit Requirement
+iabookwf_BookWFModel.type.iabookwf_createRequirementTask.description=Create & Submit Requirement
+
+iabookwf_BookWFModel.type.iabookwf_reviewRequirementTask.title=Review & Approve Requirements
+iabookwf_BookWFModel.type.iabookwf_reviewRequirementTask.description=Review & Approve Requirements
+
+iabookwf_BookWFModel.type.iabookwf_createProjectSizingTask.title=Submit Project Sizing
+iabookwf_BookWFModel.type.iabookwf_createProjectSizingTask.description=Submit Project Sizing
+
+iabookwf_BookWFModel.type.iabookwf_createProjectPlanTask.title=Prepare Project Plan
+iabookwf_BookWFModel.type.iabookwf_createProjectPlanTask.description=Prepare Project Plan
+
+iabookwf_BookWFModel.type.iabookwf_kickOffDevelopmentTask.title=Kick Off Development
+iabookwf_BookWFModel.type.iabookwf_kickOffDevelopmentTask.description=Kick Off Development
+

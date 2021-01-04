@@ -1,0 +1,13 @@
+Hello ${person.properties["cm:firstName"]},
+
+Welcome to Alfresco!
+Here are your registration details.
+
+First Name: ${person.properties["cm:firstName"]}
+Last Name: ${person.properties["cm:lastName"]}
+User Name: ${person.properties["cm:userName"]}
+
+Enjoy your Stay!
+
+Regards,
+the Alfresco Team.

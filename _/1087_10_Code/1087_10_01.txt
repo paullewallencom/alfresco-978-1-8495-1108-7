@@ -1,0 +1,8 @@
+<webscript>
+	<shortname>Home Space Contents</shortname>
+	<description>Retrieves and displays all contents under current user's Home Space.</description>
+	<url>/showhomedetails</url>
+	<format default="html"/>
+	<authentication>user</authentication>
+	<transaction>required</transaction>
+</webscript>

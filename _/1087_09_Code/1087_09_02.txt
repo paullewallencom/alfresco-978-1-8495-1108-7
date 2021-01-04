@@ -1,0 +1,13 @@
+<html>
+	<body>
+		<h1>Good Morning Snig</h1>
+		<h3>Here are the books available for you!</h3>
+		<!-- List of books available -->
+		<table>
+			<tr><td><a href="cookbook.php">Alfresco Cookbook</a></td></tr>
+			<tr><td><a href="share.php">Alfresco Share</a></td></tr>
+			<tr><td><a href="webscripts.php">All about Alfresco Web Scripts</a></td></tr>
+			<tr><td><a href="alfresco.php">Using Alfresco</a></td></tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,6 @@
+Dear ${args["username"]}
+
+This is to inform you that a  new document named ${args["docname"]} has been uploaded in space ${args["spacename"]}.
+
+Thanks
+The CMS Team.

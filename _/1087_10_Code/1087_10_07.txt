@@ -1,0 +1,17 @@
+<html>
+<body>
+	<#if dname?exists>
+		<h2>Found Documents with name: ${dname}</h2>
+		<#if docs?exists>
+			<table cellpadding="5" cellspacing="5" border="1">
+				<tr style="font-weight: bold"><td>Name</td><td>Create Date</td><td>Creator</td><td>Size (bytes)</td></tr>
+				<#list docs as c>
+					<tr><td>${c.name}</td><td>${c.properties["cm:created"]?datetime}</td><td>${c.properties["cm:creator"]}</td><td>${c.size}</td></tr>
+				</#list>
+			</table>
+		</#if>
+	<#else>
+		<h2>Search Parameter not provided.</h2>
+	</#if>
+</body>
+</html>

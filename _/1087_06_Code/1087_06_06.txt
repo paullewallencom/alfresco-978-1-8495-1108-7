@@ -1,0 +1,13 @@
+<managed-bean>
+   <managed-bean-name>DatePickerGenerator</managed-bean-name>
+   <managed-bean-class>org.alfresco.web.bean.generator.DatePickerGenerator</managed-bean-class>
+   <managed-bean-scope>request</managed-bean-scope>
+   <managed-property>
+      <property-name>startYear</property-name>
+      <value>2080</value>
+   </managed-property>
+   <managed-property>
+      <property-name>yearCount</property-name>
+      <value>100</value>
+   </managed-property>
+</managed-bean>

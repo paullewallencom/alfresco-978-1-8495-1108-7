@@ -1,0 +1,30 @@
+<h3>Tasks of user <u>${person.properties.userName}</u></h3>
+
+<table cellspacing=0 cellpadding=2>
+	<tr>
+		<th>Type</th>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Created Date</th>
+		<th>Start Date</th>
+		<th>Due Date</th>
+		<th>Priority</th>
+		<th>% Complete</th>
+		<th>Status</th>
+		<th>Completed</th>
+	</tr>
+	<#list workflow.assignedTasks as t>
+		<tr>
+			<td>${t.type}</td>
+			<td>${t.name}</td>
+			<td>${t.description}</td>
+			<td>${t.properties["cm:created"]?datetime}</td>
+			<td><#if t.properties["bpm:startDate"]?exists>${t.properties["bpm:startDate"]?datetime}<#else><i>None</i></#if></td>
+			<td><#if t.properties["bpm:dueDate"]?exists>${t.properties["bpm:dueDate"]?datetime}<#else><i>None</i></#if></td>
+			<td>${t.properties["bpm:priority"]}</td>
+			<td>${t.properties["bpm:percentComplete"]}</td>
+			<td>${t.properties["bpm:status"]}</td>
+			<td>${t.isCompleted?string("Yes", "No")}</td>
+		</tr>
+	</#list>
+</table>

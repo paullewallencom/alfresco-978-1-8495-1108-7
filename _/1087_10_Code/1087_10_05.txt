@@ -1,0 +1,8 @@
+<webscript>
+	<shortname>Document Details</shortname>
+	<description>Searches document(s) and displays details of all the documents.</description>
+	<url>/com/infoaxon/docdetails</url>
+	<format default="html"/>
+	<authentication>user</authentication>
+	<transaction>required</transaction>
+</webscript>

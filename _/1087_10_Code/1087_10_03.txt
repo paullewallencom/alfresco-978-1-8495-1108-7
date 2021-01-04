@@ -1,0 +1,23 @@
+
+
+function main()
+{
+	var folders = new Array();
+	var docs = new Array();
+
+	if (userhome != null)
+	{
+		var children = userhome.children;
+		for (i=0; i<children.length; i++)
+		{
+			var c = children[i];
+			if (c.isContainer)	folders.push(c);
+			else if (c.isDocuent)	docs.push(c);
+		}
+	}
+
+	model.folders = folders;
+	model.docs = docs;
+}
+
+main();

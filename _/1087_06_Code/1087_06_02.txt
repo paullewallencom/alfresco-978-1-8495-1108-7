@@ -1,0 +1,19 @@
+<alfresco-config>
+
+	<config evaluator="string-compare" condition="Views">
+		<views>
+			<view-defaults>
+				<browse>
+					<!-- allowable values: list|details|icons -->
+					<view>details</view>
+					<page-size>
+						<list>20</list>
+						<details>20</details>
+						<icons>20</icons>
+					</page-size>
+				</browse>
+			</view-defaults>
+		</views>
+	</config>
+
+</alfresco-config>

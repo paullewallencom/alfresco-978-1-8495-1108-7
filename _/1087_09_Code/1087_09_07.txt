@@ -1,0 +1,24 @@
+<#macro return_spaces node depth>
+	<#if node.isContainer>
+		<tr>
+			<td align='left'>(${depth}) 
+				<#if (depth>0) >
+					<#list 1..depth as i>.</#list> 
+				</#if>
+				<img src="/alfresco${node.icon16}"> <a href="/alfresco${node.url}">${node.properties.name}</a>
+			</td>
+		</tr>
+
+		<#list node.children as child>
+			<#if child.isContainer && node.children?size != 0 >
+				<@return_spaces node=child depth=depth+1/>
+			</#if>
+		</#list>
+	</#if>
+</#macro>
+
+<b>Full in-depth Listing of Spaces.</b><br><br>
+<table border="1" celpadding="1" cellspacing="1">
+	<tr><th> Root Space : ${space.name} </th></tr>
+	<@return_spaces node=space depth=0/>
+</table>

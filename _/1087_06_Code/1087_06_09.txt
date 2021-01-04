@@ -1,0 +1,5 @@
+<config evaluator="string-compare" condition="cm:folder icons">
+	<icons>
+		<icon name="space-icon-custom" path="/images/icons/ia-logo.gif" />
+	</icons>
+</config>

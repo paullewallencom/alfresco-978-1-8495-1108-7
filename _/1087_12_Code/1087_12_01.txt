@@ -1,0 +1,18 @@
+imap.server.enabled=true
+imap.server.port=143
+imap.server.attachments.extraction.enabled=true
+
+imap.mail.from.default=alfresco@demo.alfresco.org
+
+
+# Default IMAP mount points
+imap.config.home.store=${spaces.store}
+imap.config.home.rootPath=/${spaces.company_home.childname}
+imap.config.home.folderPath=Imap Home
+imap.config.server.mountPoints=AlfrescoIMAP
+imap.config.server.mountPoints.default.mountPointName=IMAP
+imap.config.server.mountPoints.default.modeName=ARCHIVE
+imap.config.server.mountPoints.default.store=${spaces.store}
+imap.config.server.mountPoints.default.rootPath=/${spaces.company_home.childname}
+imap.config.server.mountPoints.value.AlfrescoIMAP.mountPointName=Alfresco IMAP
+imap.config.server.mountPoints.value.AlfrescoIMAP.modeName=MIXED

@@ -1,0 +1,18 @@
+var qry = "@cm\\:name:\"Test_JS_API.txt\"";
+var docs = search.luceneSearch(qry);
+
+if (docs.length > 0)
+{
+	var doc = docs[0];
+	if (doc.hasPermission("ChangePermissions"))
+	{
+		var usr = people.getPerson("snig.bhaumik");
+		if (usr != null)
+		{
+			doc.setPermission("Write", "snig.bhaumik");
+			doc.setPermission("Delete", "snig.bhaumik");
+			doc.setPermission("AddChildren", "snig.bhaumik");
+			doc.setPermission("Execute", "snig.bhaumik");
+		}
+	}
+}

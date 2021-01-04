@@ -1,0 +1,54 @@
+<alfresco-config>
+
+	<config evaluator="string-compare" condition="Views">
+		<views>
+			<view-defaults>
+				<browse>
+					<!-- allowable values: list|details|icons -->
+					<view>details</view>
+					<page-size>
+						<list>20</list>
+						<details>20</details>
+						<icons>20</icons>
+					</page-size>
+				</browse>
+			</view-defaults>
+		</views>
+	</config>
+
+	<config evaluator="string-compare" condition="Languages">
+		<languages>
+			<language locale="de_DE">German</language>
+			<language locale="es_ES">Spanish</language>
+			<language locale="fr_FR">French</language>
+			<language locale="it_IT">Italian</language>
+		</languages>
+	</config>
+
+	<config>
+		<client>
+			<shelf-visible>false</shelf-visible>
+		</client>
+	</config>
+
+	<config evaluator="string-compare" condition="Sidebar">
+		<sidebar>
+			<default-plugin>shelf</default-plugin>
+		</sidebar>
+	</config>
+
+	<config evaluator="string-compare" condition="cm:folder icons">
+		<icons>
+			<icon name="space-icon-custom" path="/images/icons/ia-logo.gif" />
+		</icons>
+	</config>
+
+
+	<!-- Custom Content Type Settings -->
+	<config evaluator="string-compare" condition="Content Wizards">
+		<content-types>
+			<type name="iabook:Product"/>
+		</content-types>
+	</config>
+
+</alfresco-config>
